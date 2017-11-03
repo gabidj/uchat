@@ -1,2 +1,0 @@
-# uchat
-Chat for Workshop
