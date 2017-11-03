@@ -2,46 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>chatapp</title>
+    <title>uChat</title>
+
+
+    <!-- EXTERNAL RESOURCES -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+    <!-- EXTERNAL RESOURCES END -->
+
 
     <link rel="stylesheet" href="css/base_style.css">
+    <link rel="stylesheet" href="css/custom_style.css">
+
 </head>
 <body>
-    <div id="wrapper">  
-        <div id="user-container">   
-            <label for="user">What's your name?</label>
-            <input type="text" id="user" name="user">
-            <button type="button" id="join-chat">Join Chat</button>
-        </div>
+<div class="outer">
+    <div class="middle">
+        <div class="inner">
+            <div id="chatWrapper">
+                <div id="user-container">
+                    <label for="user">What's your name?</label>
+                    <input type="text" id="user" name="user">
+                    <button type="button" id="join-chat">Join Chat</button>
+                </div>
 
-        <div id="main-container" class="hidden">        
-            <button type="button" id="leave-room">Leave</button>
-            <div id="messages">
+                <div id="main-container" class="hidden">
+                    <button type="button" id="leave-room">Leave</button>
+                    <div id="messages">
+
+                    </div>
+
+                    <div id="msg-container">
+                        <input type="text" id="msg" name="msg">
+                        <button type="button" id="send-msg">Send</button>
+                    </div>
+                </div>
 
             </div>
 
-            <div id="msg-container">
-                <input type="text" id="msg" name="msg">
-                <button type="button" id="send-msg">Send</button>
-            </div>
+            <script id="messages-template" type="text/x-handlebars-template">
+                {{#each messages}}
+                <div class="msg">
+                    <div class="time color3">{{time}}</div>
+                    <div class="details">
+                        <span class="user color1">{{user}}</span>: <span class="text color2">{{text}}</span>
+                    </div>
+                </div>
+                {{/each}}
+            </script>
         </div>
-
     </div>
-
-    <script id="messages-template" type="text/x-handlebars-template">
-        {{#each messages}}
-        <div class="msg">
-            <div class="time">{{time}}</div>
-            <div class="details">
-                <span class="user">{{user}}</span>: <span class="text">{{text}}</span>
-            </div>
-        </div>
-        {{/each}}
-    </script>
-
-    <script src="js/main.js"></script>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>
