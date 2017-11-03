@@ -1,0 +1,11 @@
+{
+    "name": "gabidj/uchat",
+    "description": "Chat for Workshop",
+    "authors": [
+        {
+            "name": "Gabi DJ",
+            "email": "git@gabisuciu.ro"
+        }
+    ],
+    "require": {}
+}
