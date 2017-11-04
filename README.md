@@ -17,6 +17,8 @@ Basic chat using ratchet.
 * `server/src/Chat.php` - message handling implementation
 * `server/src/MyChat.php` - functinally empty chat handling (that you are encouraged to change)
 
+> Note: `composer.lock` file and `vendor` included (offline fallback)
+
 Sources:
 * [How to Quickly Build a Chat App with Ratchet](https://www.sitepoint.com/how-to-quickly-build-a-chat-app-with-ratchet/)
 * [Ratchet Website](http://socketo.me/)
